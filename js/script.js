@@ -38,5 +38,20 @@ function showList(array) {
 
 document.addEventListener("DOMContentLoaded", (e) => {
   // Escribe tu solución aquí
+
+  // Filtra los elementos de strangeArray mediante la funcion filter
+  const elementosFiltrados = strangeArray.filter(function(elemento) {
+    return typeof elemento === 'string'
+  });
+
+  // Ordena los elementos mediante sort, y dentro se utiliza una funcion para convertirlos en minusculas
+  const elementosOrdenados = elementosFiltrados.sort(function(a, b){
+    const minusA = a.toLowerCase();
+    const minusB = b.toLowerCase();
+    return minusA.localeCompare(minusB);
+  })
+
+  showList(elementosOrdenados)
+
   // Sugerencia de cómo mostrar el array => showList(strangeArray);
 });
